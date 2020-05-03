@@ -5,16 +5,16 @@ public class Main {
 
         int[] array = {234, 535, 575, 346, 5788, 4567, 7767, 33353, 33545, 656};
         int maxNmbr = greatestNmbr(array);
-        System.out.println("Numarul cel mai mare din array este: " + maxNmbr);
+        System.out.println("Ex2. Numarul cel mai mare din array este: " + maxNmbr);
 
     }
 
 
     public static int greatestNmbr(int[] array) {
         int max = 0;
-        for (int c = 0; c < array.length; c++) {
-            if (array[c] >= max) {
-                max = array[c];
+        for (int i : array) {
+            if (i >= max) {
+                max = i;
             }
         }
         return max;
