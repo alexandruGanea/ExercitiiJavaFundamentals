@@ -9,8 +9,6 @@ public class Main {
 
         int counter = wordCount(text1);
         System.out.println(". Numarul de cuvinte cu lungime impara si care se termina cu \"e\" este: " + counter);
-
-
     }
 
     public static int wordCount(String text1) {
