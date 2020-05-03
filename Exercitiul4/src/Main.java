@@ -23,9 +23,7 @@ public class Main {
     public static int wordCount(String text) {
         int counter = 0;
         System.out.print("E4.1. Cuvintele sunt: ");
-        String removeCommas = text.replace(",", "");
-        String removeDots = removeCommas.replace(".", "");
-        String[] wordArray = removeDots.split(" ");
+        String[] wordArray = text.split(" ");
         for (String s : wordArray) {
             if (s.length() > 2 && s.contains("i") && s.indexOf("i") % 2 == 0) {
                 System.out.print(s + " ");
