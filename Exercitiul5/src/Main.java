@@ -22,22 +22,22 @@ public class Main {
         String[] textArray = text.split(" ");
         for (String s : textArray) {
             if (s.startsWith("s") || s.startsWith("d")) {
-                System.out.print(s);
-                if (s.equals(textArray[textArray.length - 1])) {
-                    System.out.print(". ");
-                } else {
-                    System.out.print(", ");
-                }
+                System.out.print(s + " ");
             }
         }
     }
 
     public static void showLetters(String text) {
-        System.out.print("Literele de pe pozitia 3 a cuvintelor sunt: ");
-        String[] textArray = text.split("");
+        String[] textArray = text.split(" ");
+        System.out.print("\nLiterele de la pozitia 3 sunt: ");
         for (String s : textArray) {
-            if (s.length() >= 3) {
+            if (s.length() > 3) {
                 System.out.print(s.charAt(3));
+            }
+            if (s.equals(textArray[textArray.length - 1])) {
+                System.out.println(". ");
+            } else {
+                System.out.print(", ");
             }
         }
     }
