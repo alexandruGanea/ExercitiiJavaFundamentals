@@ -125,8 +125,102 @@ public class Main {
             option2 = s3.nextInt();
         }
         System.out.println("Ati apasat 0. O zi buna!");
+
+        // Sa se reprezinte un calculator care face urmatoarele operatii cu String-uri:
+        System.out.println("Operatii cu String-uri.");
+        String firstString;
+        String secondString;
+        Scanner s4 = new Scanner(System.in);
+        System.out.println("Introduceti primul String sau tastati cifra \"0\"  pentru un String default");
+        String input1 = s4.nextLine();
+        if (input1.equals("0")) {
+            firstString = "Ce petrecere frumoasa e la margine de lac. Broscarimea bucuroasa are vin si cozonac.";
+            System.out.println("String ales: " + firstString);
+        } else {
+            firstString = input1;
+        }
+        System.out.println("Introduceti al doilea String sau tastati cifra \"0\"  pentru un String default");
+        String input2 = s4.nextLine();
+        if (input2.equals("0")) {
+            secondString = "Un broscoi canta la cobza si o broasca la tambal. O broscuta mica stramba vrea sa joace sus pe deal.";
+            System.out.println("String ales: " + secondString);
+        } else {
+            secondString = input2;
+        }
+
+        // -- concateneaza 2 string-uri
+        StringCalc stringCalculator = new StringCalc();
+        System.out.println("String-urile concatenate: " + stringCalculator.sum(firstString, secondString));
+
+        // -- verifica daca Stringul contine un anumit caracter
+
+        firstString = (insertString(s4));
+        System.out.print("Introduceti un caracter: ");
+        String c = s4.nextLine();
+        boolean stringContains = stringCalculator.stringContains(firstString, c);
+        if (stringContains) {
+            System.out.println("String-ul contine caracterul " + c + ".");
+        } else {
+            System.out.println("String-ul nu contine caracterul " + c + ".");
+        }
+
+        // -- aduna lungimea a doua stringuri
+        System.out.println("Introduceti doua String-uri, sau tastati \"D\" pentru doua String-uri default");
+        String input3 = s4.nextLine();
+        if (input3.equals("D")) {
+            firstString = "Podul de piatra s-a daramat. A venit apa si l-a luat";
+            secondString = "Vom face altul pe rau in jos. Altul mai trainic si mai frumos";
+            System.out.println("Primul String este: " + firstString + ". Acesta are lungimea de " + firstString.length() + " caractere.");
+            System.out.println("Al doilea String este: " + secondString + ". Acesta are lungimea de " + secondString.length() + " caractere.");
+        } else {
+            firstString = input3;
+            secondString = s4.nextLine();
+        }
+        System.out.println("Suma lungimii celor doua String-uri este: " + stringCalculator.stringLengthSum(firstString, secondString));
+
+        // -- verifica daca lungimea unui string este numar par sau impar
+
+        firstString = insertString(s4);
+        System.out.println();
+        if (stringCalculator.oddOrEvenStringLength(firstString)) {
+            System.out.println("String-ul are " + firstString.length() + " caractere. NUMARR PAR");
+        } else {
+            System.out.println("String-ul are " + firstString.length() + " caractere. NUMARR IMPAR");
+        }
+
+        // -- transforma un string intr-un sir de caractere
+        firstString = insertString(s4);
+        stringCalculator.string2chars(firstString);
+
+        // -- verifica daca stringul incepe cu o vocala
+        firstString = insertString(s4);
+        if(stringCalculator.checkVowel(firstString)){
+            System.out.println("String-ul incepe cu o vocala.");
+        }else {
+            System.out.println("String-ul nu incepe cu o vocala.");
+        }
+
+        // -- numara spatiile dintr-un String
+        firstString = insertString(s4);
+        System.out.println("Numarul de spatii este: " + stringCalculator.countSpaces(firstString));
+
     }
 
+    public static String insertString(Scanner s4) {
+        String outputString;
+        System.out.println("Introduceti un String sau tastati cifra \"0\"  pentru un String default");
+        String input = s4.nextLine();
+        if (input.equals("0")) {
+            outputString = "In padurea cu alune aveau casa doi pitici. Vine pupaza si spune: \"Legea nr. 171/2010, Art. 12.a: " +
+                    "Constituie contravenții silvice și se sancționează cu amendă de la 500 lei până la 800 lei instalarea " +
+                    "în fondul forestier de corturi, tonete, rulote, fără drept sau în alte locuri decât cele aprobate " +
+                    "și delimitate de deținătorul terenului forestier respectiv.\"";
+            System.out.println("String default: " + outputString);
+        } else {
+            outputString = input;
+        }
+        return outputString;
+    }
 }
 
 
