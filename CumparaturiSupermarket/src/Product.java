@@ -1,6 +1,6 @@
 public class Product {
-    private String name;
-    private int price;
+    protected String name;
+    protected int price;
 
     public Product() {
     }
