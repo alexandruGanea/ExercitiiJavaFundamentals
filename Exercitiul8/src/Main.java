@@ -150,7 +150,7 @@ public class Main {
 
         // -- concateneaza 2 string-uri
         StringCalc stringCalculator = new StringCalc();
-        System.out.println("String-urile concatenate: " + stringCalculator.sum(firstString, secondString));
+        System.out.println("String-urile concatenate: " + stringCalculator.concat(firstString, secondString));
 
         // -- verifica daca Stringul contine un anumit caracter
 
@@ -190,7 +190,16 @@ public class Main {
 
         // -- transforma un string intr-un sir de caractere
         firstString = insertString(s4);
-        stringCalculator.string2chars(firstString);
+        char[] charArray = stringCalculator.string2chars(firstString);
+        System.out.print("Array de caractere: { ");
+        for( char character: charArray) {
+            System.out.print(character);
+            if (character == charArray[charArray.length - 1]) {
+                System.out.println(" }");
+            } else {
+                System.out.print(", ");
+            }
+        }
 
         // -- verifica daca stringul incepe cu o vocala
         firstString = insertString(s4);
